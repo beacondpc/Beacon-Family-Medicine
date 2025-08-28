@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Why DPC • Beacon DPC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--brand:#106C6E;--brand-2:#2F68D9;--accent:#FFC400;--ink:#0f172a;--muted:#475569;--bg:#ffffff;--surface:#f8fafc;--ring: rgba(47,104,217,.35);--radius:14px;--shadow:0 10px 30px rgba(2,6,23,.08)}
+    *{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid #e2e8f0;z-index:40}
+    .row{display:flex;align-items:center;gap:16px}.space{flex:1}.logo{display:flex;align-items:center;gap:12px}.logo svg{display:block}.brand-title{font-weight:700;letter-spacing:.2px}
+    nav a{padding:10px 12px;border-radius:10px}nav a:hover{background:#eef2ff}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;font-weight:600;box-shadow:var(--shadow)}
+    .ghost{padding:12px 16px;border-radius:999px;border:1px solid #e2e8f0}
+    .hero{padding:56px 0;background:radial-gradient(1200px 600px at 10% -10%,rgba(255,196,0,.18),transparent),radial-gradient(1200px 600px at 90% -10%,rgba(47,104,217,.09),transparent)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f1f5f9;border:1px solid #e2e8f0;color:#334155;font-weight:600;font-size:12px}
+    h1{font-size:clamp(28px,4vw,48px);line-height:1.1;margin:10px 0 14px}.lead{font-size:clamp(16px,2.2vw,19px);color:var(--muted);margin:0 0 20px}
+    .card{background:white;border:1px solid #e2e8f0;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    section{padding:56px 0}h2{font-size:clamp(22px,3vw,34px);margin:0 0 10px}p{color:var(--muted);line-height:1.7}
+    .two{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    form{display:grid;gap:16px}label{font-weight:600;color:#111827}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #cbd5e1;background:#fff}
+    input:focus,textarea:focus{outline:none;box-shadow:0 0 0 4px var(--ring);border-color:var(--brand-2)}
+    .hint{font-size:12px;color:#64748b}.error{color:#b91c1c;font-size:13px}.success{color:#065f46;font-size:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid transparent;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;font-weight:600}
+    footer{padding:28px 0;border-top:1px solid #e2e8f0;color:#64748b}
+    @media (max-width: 900px){.grid,.two{grid-template-columns:1fr}header .container{padding:16px}.hero{padding:36px 0}}
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="container row">
+      <a href="/index.html" class="logo" aria-label="Beacon Direct Primary Care home">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#106C6E"/><stop offset="1" stop-color="#2F68D9"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+          <path d="M16 40a16 16 0 1 1 32 0" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="32" cy="32" r="6" fill="#FFC400"/>
+          <path d="M8 24 L24 20" stroke="#FFC400" stroke-width="4" stroke-linecap="round"/>
+          <path d="M56 24 L40 20" stroke="#FFC400" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div><div class="brand-title">Beacon Direct Primary Care</div><div style="font-size:12px;color:#64748b">Family Medicine • North Texas</div></div>
+      </a>
+      <div class="space"></div>
+      <nav class="row" aria-label="Primary">
+        <a href="/about.html">About</a>
+        <a href="/why-dpc.html">Why DPC</a>
+        <a class="cta" href="/join.html" aria-label="Join our Waiting List">Join our Waiting List</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container two">
+        <div>
+          <h1>Why Direct Primary Care</h1>
+          <p>DPC is a membership model. You pay a predictable monthly rate and receive primary care without claims or prior authorizations. This removes delays and aligns incentives around your health, not billing codes.</p>
+          <p>Pair DPC with a high‑deductible plan or health‑sharing for hospital coverage. Use the right tool for the job: DPC for everyday care, insurance for expensive events.</p>
+          <div style="margin-top:16px"><a class="btn" href="/join.html">Join our Waiting List</a></div>
+        </div>
+        <div class="card">
+          <h3>Benefits at a glance</h3>
+          <ul style="padding-left:18px;color:var(--muted);line-height:1.9">
+            <li>Longer visits with your doctor</li>
+            <li>Direct messaging and quick follow‑ups</li>
+            <li>Transparent pricing and fewer surprises</li>
+            <li>Proactive prevention and continuity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="container row" style="justify-content:space-between">
+      <div>© <span id="y"></span> Beacon Direct Primary Care PLLC</div>
+      <div><a href="/join.html">Join our Waiting List</a></div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>
