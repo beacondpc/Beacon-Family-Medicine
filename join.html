@@ -76,7 +76,7 @@
     const FORM=document.getElementById("waitlist-form");
     const STATUS=document.getElementById("status");
     const BTN=document.getElementById("submitBtn");
-    const BACKEND_URL="https://script.google.com/macros/s/AKfycbzvdfwehxhIbBpYNNAb_GAy3FGXG3azgAu5jxZJiZibse4GzSMuxXvCDgsTS2f2K4Z6jQ/exec;
+    const BACKEND_URL="https://script.google.com/macros/s/AKfycbzvdfwehxhIbBpYNNAb_GAy3FGXG3azgAu5jxZJiZibse4GzSMuxXvCDgsTS2f2K4Z6jQ/exec";
 
     function setError(key,msg){
       const el=document.querySelector(`[data-err="${key}"]`);
@@ -96,16 +96,13 @@
       if(!validate(data)) return;
       BTN.disabled=true; BTN.textContent="Submitting…";
       try{
-        const res=await fetch(BACKEND_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({source:"beacon-waitlist-v1",timestamp:new Date().toISOString(),...data})});
-        let ok=false;
-        try{const j=await res.json(); ok=j&&j.ok;}catch(_){ok=res.ok;}
-        if(ok){STATUS.innerHTML='<div class="success">Thank you. You\'re on the waiting list.</div>'; FORM.reset();}
-        else{throw new Error("Submission failed");}
-      }catch(err){
-        STATUS.innerHTML='<div class="error">Submission failed. Email beaconfamilymedicine@gmail.com.</div>';
-      }finally{
-        BTN.disabled=false; BTN.textContent="Join waiting list";
-      }
+        const res=await fetch(BACKEND_URL,{method:"POST", body: JSON.stringify({source:"beacon-waitlist-v1",timestamp:new Date().toISOString(),...data})});
+        const text=await res.text();
+        const ok = res.ok && /"ok"\s*:\s*true/.test(text);
+        if(ok){ STATUS.innerHTML='<div class="success">Thank you. You\'re on the waiting list.</div>'; FORM.reset(); }
+        else{ throw new Error("Bad response: "+text); }
+      }catch(err){ STATUS.innerHTML='<div class="error">Submission failed. Email beaconfamilymedicine@gmail.com.</div>'; }
+      finally{ BTN.disabled=false; BTN.textContent="Join waiting list"; }
     });
   </script>
 </body>
